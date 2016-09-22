@@ -38,7 +38,31 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title"><img src="logo.png" style="width:50px; height="auto" "></div>
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Slack name on DevCenter</th>
+                        <th>Github Url</th>
+                        <th>Twitter Url</th>
+                        <th>Skills</th>
+                    </thead>
+                    <tbody>
+                    <?php foreach($entries as $entry)
+                    {
+                        $values = $entry->getValues();
+                        echo '<tr>
+                            <td>'.$values['name'].'</td>
+                            <td>'.$values['slacknameondevcenter'].'</td>
+                            <td>'.$values['githuburl'].'</td>
+                            <td>'.$values['twitterurl'].'</td>
+                            <td>'.$values['skills'].'</td>
+                            </tr>
+                        ';
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
