@@ -24,6 +24,7 @@
             $listFeedSheet = $worksheetFeed->getByTitle('Sheet1');
             $listFeed = $listFeedSheet->getListFeed();
             $data['entries'] = $entries = $listFeed->getEntries();
+            $data['total'] = count($entries);
             $data['count'] = 0;
             $cellFeed = $listFeedSheet->getCellFeed();
             
