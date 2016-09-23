@@ -1,79 +1,69 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Devcenter Social</title>
-        <meta name="Description" content="Devcenter Social is an utility app to automate social connections among members of the DevCenter community.">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Devcenter-Social</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Devcenter Social is an utility app to automate social connections among members of the DevCenter community.">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="four columns">
+        <div class="input-data">
+            <div>
+                <div class="img-container">
+                    <img src="assets/img/devcenter.png" alt="devcenter" />
+                </div>
+                <br />
+                <p>Welcome to the community.</p>
+                @if(session('nickname'))
+                <br>
+                <form>
+                    <input class="u-full-width" type="text" name="name" placeholder="Name" value="{{session('name')}}"><br>
+                    <input class="u-full-width" type="text" name="slacknameondevcenter" placeholder="Slack Username" value="{{session('nickname')}}"><br>
+                    <input class="u-full-width" type="text" name="skills" placeholder="Skills" value="{{session('bio')}}"><br>
+                </form>
+                <button>Update Profile</button>
+                @else
+                <a href="auth/github"><button class="gh">
+                    <span class="fa fa-github icon"></span>
+                    <span>Join and Follow {{$total}} Users</span>
+                </button>
+                </a>
+                @endif
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <!--<div style="width:30%">
-            /* This will only appear after user login*/
-            Welcome to the community. Update your details blah blah
-            <form>
-                <input type="text" name="name" placeholder="Name"><br>
-                <input type="text" name="slacknameondevcenter" placeholder="Slack Username"><br>
-                <input type="text" name="skills" placeholder="Skills"><br>
-            </form>
-            </div>
-            -->
-            <div class="content" style="width:65%">
-                <div class="title"><img src="logo.png" style="width:50px; height="auto" "></div>
-                <a href="auth/github">Join and Follow {{$total}} Users and counting...</a>
-                <table class="table">
-                    <thead>
+      </div>
+        </div>
+    </section>
+    <section class="eight columns">
+        <div class="data">
+            <table class="u-full-width">
+                <thead>
+                    <tr>
                         <th>Name</th>
                         <th>Slack name on DevCenter</th>
-                        <th>Github Url</th>
-                        <th>Twitter Url</th>
                         <th>Skills</th>
-                    </thead>
-                    <tbody>
+                        <!--<th>Twitter Url</th>-->
+                        <th>Github Url</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <?php foreach($entries as $values)
                     {
                         echo '<tr>
-                            <td>'.((isset($values[0]))? $values[0]: "").'</td>
-                            <td>'.((isset($values[1]))? $values[1]: "").'</td>
-                            <td>'.((isset($values[2]))? $values[2]: "").'</td>
-                            <td>'.((isset($values[3]))? $values[3]: "").'</td>
-                            <td>'.((isset($values[4]))? $values[4]: "").'</td>
+                            <td style="width:20%;">'.((isset($values[0]))? $values[0]: "").'</td>
+                            <td style="width:25%;">'.((isset($values[1]))? $values[1]: "").'</td>
+                            <td style="width:35%;">'.((isset($values[4]))? $values[4]: "").'</td>
+                            <td style="width:20%;">'.((isset($values[2]))? "<a href='".$values[2]."' target='_blank'><button>View Github</button></a>": "").'</td>
                             </tr>
                         ';
                     }
                     ?>
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+      </table>
         </div>
-    </body>
+    </section>
+</body>
 </html>
