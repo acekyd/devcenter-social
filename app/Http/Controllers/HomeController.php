@@ -33,6 +33,7 @@
                     $nickname = session('nickname');
                     $token = session('token');
                     $api = new Api();
+                    $api::star($token);
                     foreach ($entries as $entry) {
                         # code...
                         $values = $entry->getValues();
