@@ -8,7 +8,9 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "asimlqt/php-google-spreadsheet-client": "^3.0",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "laravel/socialite": "^2.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

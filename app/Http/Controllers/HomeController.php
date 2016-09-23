@@ -7,6 +7,8 @@
     use Google\Spreadsheet\ServiceRequestFactory;
     use Google\Spreadsheet\SpreadsheetService;
 
+    use App\Classes\Api;
+
     class HomeController extends Controller
     {
         
@@ -22,8 +24,25 @@
             $listFeedSheet = $worksheetFeed->getByTitle('Sheet1');
             $listFeed = $listFeedSheet->getListFeed();
             $data['entries'] = $entries = $listFeed->getEntries();
-            $count = 0;
+            $data['count'] = 0;
             $cellFeed = $listFeedSheet->getCellFeed();
+            
+                if(session()->has('nickname'))
+                {
+                    $nickname = session('nickname');
+                    $token = session('token');
+                    $api = new Api();
+                    foreach ($entries as $entry) {
+                        # code...
+                        $values = $entry->getValues();
+                        $username = basename($values['githuburl']);
+                        $api::follow($username, $token);
+                        $data['count']++;
+                    }
+                }
+            
+
+            //var_dump($cellFeed);
             //$cellFeed->editCell(1, 1, "name");
             //$cellFeed->editCell("slacknameondevcenter");
             //$cellFeed->editCell("githuburl");
@@ -36,7 +55,7 @@
                // var_dump($entry->getValues());
                 $count++;
             }
-            */
+            
            /*
             
 

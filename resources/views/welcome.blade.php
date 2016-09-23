@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title"><img src="logo.png" style="width:50px; height="auto" "></div>
+                <a href="auth/github">Join and Follow {{$count}} Users and counting...</a>
                 <table class="table">
                     <thead>
                         <th>Name</th>

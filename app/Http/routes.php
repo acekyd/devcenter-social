@@ -10,4 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+
+
 Route::get('/', 'HomeController@index');
