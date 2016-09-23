@@ -10,7 +10,8 @@
         "asimlqt/php-google-spreadsheet-client": "^3.0",
         "google/apiclient": "^2.0",
         "laravel/socialite": "^2.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "revolution/laravel-google-sheets": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

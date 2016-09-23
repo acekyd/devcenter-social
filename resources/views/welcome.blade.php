@@ -58,15 +58,14 @@
                         <th>Skills</th>
                     </thead>
                     <tbody>
-                    <?php foreach($entries as $entry)
+                    <?php foreach($entries as $values)
                     {
-                        $values = $entry->getValues();
                         echo '<tr>
-                            <td>'.$values['name'].'</td>
-                            <td>'.$values['slacknameondevcenter'].'</td>
-                            <td>'.$values['githuburl'].'</td>
-                            <td>'.$values['twitterurl'].'</td>
-                            <td>'.$values['skills'].'</td>
+                            <td>'.((isset($values[0]))? $values[0]: "").'</td>
+                            <td>'.((isset($values[1]))? $values[1]: "").'</td>
+                            <td>'.((isset($values[2]))? $values[2]: "").'</td>
+                            <td>'.((isset($values[3]))? $values[3]: "").'</td>
+                            <td>'.((isset($values[4]))? $values[4]: "").'</td>
                             </tr>
                         ';
                     }

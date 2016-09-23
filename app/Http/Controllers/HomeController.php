@@ -3,83 +3,55 @@
     namespace App\Http\Controllers;
 
     use App\Http\Controllers\Controller;
-    use Google\Spreadsheet\DefaultServiceRequest;
-    use Google\Spreadsheet\ServiceRequestFactory;
-    use Google\Spreadsheet\SpreadsheetService;
+
+    use Sheets;
+    use Google;
+
+
 
     use App\Classes\Api;
 
     class HomeController extends Controller
     {
-        
+
         public function index()
         {
+            $googleClient = Google::getClient();
+            Sheets::setService(Google::make('sheets'));
+            Sheets::spreadsheet('1FUKXOS0KRGDy5gXyFPrOT6uXUexfeMyLlSk2QYbL2Ks');
+            $values = Sheets::sheet('Sheet1')->all();
+            $data['total'] = $total = count($values)-1;
+            $add = 'A'.($total+2);
+            $values = Sheets::range('')->all();
+            array_shift($values);
+            $data['entries'] = $values;
+            $exists = 0;
 
-            $serviceRequest = new DefaultServiceRequest("");
-            $serviceRequest->setSslVerifyPeer(false);
-            ServiceRequestFactory::setInstance($serviceRequest);
-
-            $spreadsheetService = new \Google\Spreadsheet\SpreadsheetService();
-            $worksheetFeed = $spreadsheetService->getPublicSpreadsheet("1FUKXOS0KRGDy5gXyFPrOT6uXUexfeMyLlSk2QYbL2Ks");
-            $listFeedSheet = $worksheetFeed->getByTitle('Sheet1');
-            $listFeed = $listFeedSheet->getListFeed();
-            $data['entries'] = $entries = $listFeed->getEntries();
-            $data['total'] = count($entries);
             $data['count'] = 0;
-            $cellFeed = $listFeedSheet->getCellFeed();
-            
+
                 if(session()->has('nickname'))
                 {
                     $nickname = session('nickname');
                     $token = session('token');
                     $api = new Api();
                     $api::star_repo($token);
-                    foreach ($entries as $entry) {
-                        # code...
-                        $values = $entry->getValues();
-                        $username = basename($values['githuburl']);
-                        $api::follow($username, $token);
-                        $data['count']++;
+                    foreach ($values as $entry) {
+                        $username = basename($entry[2]);
+                        if(strtolower($nickname) != strtolower($username))
+                        {
+                            $api::follow($username, $token);
+                            $data['count']++;
+                        }
+                        else {
+                            $exists = 1;
+                        }
+                    }
+
+                    if(!$exists)
+                    {
+                        Sheets::sheet('Sheet1')->range($add)->update([[session('name'), '', 'https://github.com/'.$nickname, '', session('bio')]]);
                     }
                 }
-            
-
-            //var_dump($cellFeed);
-            //$cellFeed->editCell(1, 1, "name");
-            //$cellFeed->editCell("slacknameondevcenter");
-            //$cellFeed->editCell("githuburl");
-            //$cellFeed->editCell("twitterurl");
-            //$cellFeed->editCell("skills");
-
-            /*
-            foreach ($entries as $entry) {
-                # code...
-               // var_dump($entry->getValues());
-                $count++;
-            }
-            
-           /*
-            
-
-            $cellFeed->editCell(1,1, "name");
-            $cellFeed->editCell(1,2, "slacknameondevcenter");
-            $cellFeed->editCell(1,3, "githuburl");
-            $cellFeed->editCell(1,4, "twitterurl");
-            $cellFeed->editCell(1,5, "skills");
-
-            $batchRequest = new \Google\Spreadsheet\Batch\BatchRequest();
-            $batchRequest->addEntry($cellFeed->createCell($count+1, 1, "111"));
-            $batchRequest->addEntry($cellFeed->createCell($count+1, 2, "222"));
-            $batchRequest->addEntry($cellFeed->createCell($count+1, 3, "333"));
-            $batchRequest->addEntry($cellFeed->createCell($count+1, 4, "=SUM(A2:A4)"));
-            $batchRequest->addEntry($cellFeed->createCell($count+1, 5, "=SUM(A2:A4)"));
-
-            $batchResponse = $cellFeed->insertBatch($batchRequest);
-            */
-           // this bit below will create a new row, only if you have a frozen first row adequatly labelled
-
-            $row = array('name'=>'John', 'slacknameondevcenter'=>25);
-          //  $listFeed->insert($row);
 
             return view('welcome', $data);
         }

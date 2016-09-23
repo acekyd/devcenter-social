@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24e15acc2564be1a2fd9a7fd89e6dd3d",
-    "content-hash": "b8a83113db7d148831b2aa9bbaa2e196",
+    "hash": "2bf4ee768e1785f7191204a642386924",
+    "content-hash": "22e95dfcb2ee96dfb496d8dbb2eb7b6e",
     "packages": [
         {
             "name": "asimlqt/php-google-spreadsheet-client",
@@ -1610,6 +1610,104 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "pulkitjalan/google-apiclient",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pulkitjalan/google-apiclient.git",
+                "reference": "0ef4263fe4f2c9e471c27c93c87fb877740d29df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pulkitjalan/google-apiclient/zipball/0ef4263fe4f2c9e471c27c93c87fb877740d29df",
+                "reference": "0ef4263fe4f2c9e471c27c93c87fb877740d29df",
+                "shasum": ""
+            },
+            "require": {
+                "google/apiclient": "^2.0",
+                "illuminate/support": "~5",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PulkitJalan\\Google\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pulkit Jalan"
+                }
+            ],
+            "description": "Google api php client wrapper with Cloud Platform and Laravel 4 & 5 support",
+            "homepage": "https://github.com/pulkitjalan/google-apiclient",
+            "keywords": [
+                "cloud platform",
+                "google",
+                "laravel"
+            ],
+            "time": "2016-07-20 07:11:02"
+        },
+        {
+            "name": "revolution/laravel-google-sheets",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kawax/laravel-google-sheets.git",
+                "reference": "a9f233294126100478a1ee56497ad2fa9ac90dfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kawax/laravel-google-sheets/zipball/a9f233294126100478a1ee56497ad2fa9ac90dfc",
+                "reference": "a9f233294126100478a1ee56497ad2fa9ac90dfc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "pulkitjalan/google-apiclient": "3.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GoogleSheets\\": "src/GoogleSheets/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "Google Sheets API v4",
+            "keywords": [
+                "google",
+                "laravel",
+                "sheets"
+            ],
+            "time": "2016-08-14 02:18:35"
         },
         {
             "name": "swiftmailer/swiftmailer",
