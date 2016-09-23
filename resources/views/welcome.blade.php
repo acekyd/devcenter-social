@@ -8,6 +8,7 @@
   <meta name="description" content="Devcenter Social is an utility app to automate social connections among members of the DevCenter community.">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/devcenter.png">
 </head>
 <body>
     <section class="four columns">
