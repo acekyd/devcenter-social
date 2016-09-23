@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
-
+        <title>Devcenter Social</title>
+        <meta name="Description" content="Devcenter Social is an utility app to automate social connections among members of the DevCenter community.">
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
