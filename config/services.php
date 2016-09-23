@@ -36,9 +36,9 @@ return [
     ],
 
     'github' => [
-    'client_id' => env('GITHUB_ID', 'ce335652a5a2953a14ee'),
-    'client_secret' => env('GITHUB_SECRET', '4d532bdedf0cab173f52c21499937d1fe1327e5f'),
-    'redirect' => env('GITHUB_URL', 'http://local-web:8080/devcenter-social/public/auth/github/callback'),
+    'client_id' => env('GITHUB_ID', '74da5dc0bc63d0ac8c75'),
+    'client_secret' => env('GITHUB_SECRET', '52c7c8b26ddea7850f23996952f36aab463e0a58'),
+    'redirect' => env('GITHUB_URL', 'http://devcenter-social.herokuapp.com/auth/github/callback'),
 ],
 
 ];
