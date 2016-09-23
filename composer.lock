@@ -4,54 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2bf4ee768e1785f7191204a642386924",
-    "content-hash": "22e95dfcb2ee96dfb496d8dbb2eb7b6e",
+    "hash": "5c5f58273da07e6686670d80d149a294",
+    "content-hash": "b061e0f21a6ed47bb6b7d136eddf8de4",
     "packages": [
-        {
-            "name": "asimlqt/php-google-spreadsheet-client",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/asimlqt/php-google-spreadsheet-client.git",
-                "reference": "fd908c641f394bf459f1042288bd9a6ea172b6be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/asimlqt/php-google-spreadsheet-client/zipball/fd908c641f394bf459f1042288bd9a6ea172b6be",
-                "reference": "fd908c641f394bf459f1042288bd9a6ea172b6be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.4.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Google\\": "src/Google"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Asim Liaquat",
-                    "email": "asimlqt22@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Google Spreadsheet PHP Client",
-            "homepage": "https://github.com/asimlqt/php-google-spreadsheet-client",
-            "keywords": [
-                "google",
-                "spreadsheet"
-            ],
-            "time": "2016-04-22 09:14:40"
-        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
