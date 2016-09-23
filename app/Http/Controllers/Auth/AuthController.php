@@ -94,10 +94,8 @@ class AuthController extends Controller
             $user = Socialite::driver('github')->user();
         } catch (Exception $e) {
             return redirect('auth/github');
-            //return Redirect::to('auth/github');
         }
 
-        //var_dump($user);
         $authUser = $this->findOrCreateUser($user);
 
         //Auth::login($authUser, true);
@@ -125,6 +123,7 @@ class AuthController extends Controller
                 'avatar' => $githubUser->avatar,
                 'token' => $githubUser->token,
                 'url' => $githubUser->user['url'],
+                'bio' => $githubUser->user['bio'],
                 'nickname' =>$githubUser->nickname
             ]);
 
