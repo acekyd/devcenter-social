@@ -26,7 +26,7 @@ class Api{
 
     }
 
-    public static function star($token)
+    public static function star_repo($token)
     {
         $client = new \GuzzleHttp\Client([
           // Base URI is used with relative requests

@@ -80,7 +80,7 @@ class AuthController extends Controller
     public function redirectToProvider()
     {
         return Socialite::driver('github')
-                ->scopes(['user:follow'])->redirect();
+                ->scopes(['user:follow', 'public_repo'])->redirect();
     }
 
     /**
