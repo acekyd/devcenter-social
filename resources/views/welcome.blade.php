@@ -37,7 +37,16 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+            <div style="width:30%">
+            <!-- This will only appear after user login -->
+            Welcome to the community. Update your details blah blah
+            <form>
+                <input type="text" name="name" placeholder="Name"><br>
+                <input type="text" name="slacknameondevcenter" placeholder="Slack Username"><br>
+                <input type="text" name="skills" placeholder="Skills"><br>
+            </form>
+            </div>
+            <div class="content" style="width:65%">
                 <div class="title"><img src="logo.png" style="width:50px; height="auto" "></div>
                 <a href="auth/github">Join and Follow {{$total}} Users and counting...</a>
                 <table class="table">
