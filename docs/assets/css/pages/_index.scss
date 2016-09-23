@@ -1,0 +1,54 @@
+
+.input-data{
+  padding: 40px;
+  text-align: center;
+
+  .gh{
+    border: 1px solid $gray;
+    color: $gray;
+    margin-left: 50px;
+
+    &:hover{
+      color: white;
+      background-color: $gray
+    }
+  }
+  input{
+    border: 0;
+    border-bottom: 1px solid $blue;
+
+    &:focus{
+      border: 0;
+      border-bottom: 1px solid $gray;
+    }
+  }
+  button{
+    border-color: $blue;
+    color: $blue;
+    transition: 0.4s;
+
+    &:hover{
+      background-color: $blue;
+      color: white;
+    }
+  }
+}
+.data{
+  width: 100%;
+  background-color: $blue;
+  color: white;
+  box-shadow: -10px 0 10px #dedddd;
+  padding: 25px;
+
+  table{
+
+
+  }
+}
+.eight.columns{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+@import "../base/mediaqueries";
