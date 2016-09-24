@@ -45,6 +45,7 @@
                         else {
                             session()->put('cell_row', 'A'.($count+2));
                             $exists = 1;
+                            $data['user'] = $entry;
                         }
                         $count++;
                     }
