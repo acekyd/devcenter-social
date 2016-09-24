@@ -18,16 +18,21 @@
                     <img src="assets/img/devcenter.png" alt="devcenter" />
                 </div>
                 <br />
-                <p>Welcome to the community.</p>
                 @if(session('nickname'))
+                <div class="alert">
+                  Yaaay! Welcome to the club!
+                </div>
                 <br>
-                <form>
+                <form action="update" method="post">
+                    {{ csrf_field() }}
                     <input class="u-full-width" type="text" name="name" placeholder="Name" value="{{session('name')}}"><br>
                     <input class="u-full-width" type="text" name="slacknameondevcenter" placeholder="Slack Username" value="{{session('nickname')}}"><br>
                     <input class="u-full-width" type="text" name="skills" placeholder="Skills" value="{{session('bio')}}"><br>
+                    <button type="submit">Update Profile</button>
                 </form>
-                <button>Update Profile</button>
+                
                 @else
+                <p>Welcome to the community.</p>
                 <a href="auth/github"><button class="gh">
                     <span class="fa fa-github icon"></span>
                     <span>Join and Follow {{$total}} Users</span>

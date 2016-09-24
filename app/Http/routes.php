@@ -15,3 +15,4 @@ Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback')
 
 
 Route::get('/', 'HomeController@index');
+Route::post('/update', 'HomeController@update');
