@@ -54,17 +54,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($entries as $values)
-                        {
-                            echo '<tr>
-                                <td style="width:20%;">'.((isset($values[0]))? $values[0]: "").'</td>
-                                <td style="width:25%;">'.((isset($values[1]))? $values[1]: "").'</td>
-                                <td style="width:35%;">'.((isset($values[4]))? $values[4]: "").'</td>
-                                <td style="width:20%;">'.((isset($values[2]))? "<a href='".$values[2]."' target='_blank'><button>View Github</button></a>": "").'</td>
-                                </tr>
-                            ';
-                        }
-                        ?>
+                        @foreach($entries as $values)
+                            <tr>
+                                <td style="width:20%;">{{$values[0] or ""}}</td>
+                                <td style="width:25%;">{{$values[1] or ""}}</td>
+                                <td style="width:35%;">{{$values[4] or ""}}</td>
+                                <td style="width:20%;">{!!((isset($values[2]))? "<a href='$values[2]' target='_blank'><button>View Github</button></a>": "")!!}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
