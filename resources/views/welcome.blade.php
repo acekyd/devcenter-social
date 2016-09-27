@@ -18,7 +18,12 @@
                         <img src="assets/img/devcenter.png" alt="devcenter" />
                     </div>
                     <br />
-                    @if(session('nickname'))
+                    @if(isset($error))
+                        <div class="error">
+                          {{$error}}
+                        </div>
+                    @endif
+                    @if(session('nickname') && !isset($error))
                     <div class="alert">
                       Yaaay! Welcome to the club!
                     </div>

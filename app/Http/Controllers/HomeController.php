@@ -46,12 +46,17 @@ class HomeController extends Controller
                     }
                     $count++;
                 }
-
                 if(!$exists)
                 {
-                    $data['user'] = [session('name'), '', 'https://github.com/'.$nickname, '', session('bio')];
-                    Sheets::sheet('Sheet1')->range($add)->update([[session('name'), '', 'https://github.com/'.$nickname, '', session('bio')]]);
-                    session()->put('cell_row', $add);
+                    if(session('name') == null || session('bio') == null)
+                    {
+                        $data['error'] = "Update your Github profile and try again.";
+                    }
+                    else {
+                        $data['user'] = [session('name'), '', 'https://github.com/'.$nickname, '', session('bio')];
+                        Sheets::sheet('Sheet1')->range($add)->update([[session('name'), '', 'https://github.com/'.$nickname, '', session('bio')]]);
+                        session()->put('cell_row', $add);
+                    }
                 }
             }
 
