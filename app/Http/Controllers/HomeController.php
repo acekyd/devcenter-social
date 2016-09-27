@@ -51,6 +51,7 @@ class HomeController extends Controller
                     if(session('name') == null || session('bio') == null)
                     {
                         $data['error'] = "Update your Github profile and try again.";
+                        session()->flush();
                     }
                     else {
                         $data['user'] = [session('name'), '', 'https://github.com/'.$nickname, '', session('bio')];
