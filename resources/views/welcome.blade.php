@@ -25,9 +25,9 @@
                     <br>
                     <form action="update" method="post">
                         {{ csrf_field() }}
-                        <input class="u-full-width" type="text" name="name" placeholder="Name" value="{{$user[0]}}"><br>
-                        <input class="u-full-width" type="text" name="slacknameondevcenter" placeholder="Slack Username" value="{{$user[1]}}"><br>
-                        <input class="u-full-width" type="text" name="skills" placeholder="Skills" value="{{$user[4]}}"><br>
+                        <input class="u-full-width" type="text" name="name" placeholder="Name" value="{{$user[0] or ""}}"><br>
+                        <input class="u-full-width" type="text" name="slacknameondevcenter" placeholder="Slack Username" value="{{$user[1] or ""}}"><br>
+                        <input class="u-full-width" type="text" name="skills" placeholder="Skills" value="{{$user[4] or ""}}"><br>
                         <button type="submit">Update Profile</button>
                     </form>
                     @else
