@@ -36,9 +36,9 @@ return [
     ],
 
     'github' => [
-    'client_id' => env('GITHUB_ID', '74da5dc0bc63d0ac8c75'),
-    'client_secret' => env('GITHUB_SECRET', '52c7c8b26ddea7850f23996952f36aab463e0a58'),
-    'redirect' => env('GITHUB_URL', 'https://dcsquare-social.herokuapp.com/auth/github/callback'),
+    'client_id' => env('GITHUB_ID'),
+    'client_secret' => env('GITHUB_SECRET'),
+    'redirect' => env('GITHUB_URL'),
 ],
 
 ];
