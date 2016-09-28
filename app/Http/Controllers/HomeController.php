@@ -48,7 +48,7 @@ class HomeController extends Controller
                 }
                 if(!$exists)
                 {
-                    if(session('name') == null || session('bio') == null)
+                    if(session('name') == null)
                     {
                         $data['error'] = "Update your Github profile and try again.";
                         session()->flush();
