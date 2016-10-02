@@ -27,6 +27,14 @@
                     <div class="alert">
                       Yaaay! Welcome to the club!
                     </div>
+                    @if(auth()->check())
+                    <br>
+                    <a href="https://docs.google.com/spreadsheets/d/1FUKXOS0KRGDy5gXyFPrOT6uXUexfeMyLlSk2QYbL2Ks/edit#gid=0"><button class="google-doc">
+                        <span class="fa fa-file-text-o icon"></span>
+                        <span>View the original Google Doc</span>
+                    </button>
+                    </a>
+                    @endif
                     <br>
                     <form action="update" method="post">
                         {{ csrf_field() }}
