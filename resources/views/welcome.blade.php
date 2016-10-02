@@ -27,21 +27,18 @@
                     <div class="alert">
                       Yaaay! Welcome to the club!
                     </div>
-                    @if(auth()->check())
-                    <br>
-                    <a href="https://docs.google.com/spreadsheets/d/1FUKXOS0KRGDy5gXyFPrOT6uXUexfeMyLlSk2QYbL2Ks/edit#gid=0"><button class="google-doc">
-                        <span class="fa fa-file-text-o icon"></span>
-                        <span>View the original Google Doc</span>
-                    </button>
-                    </a>
-                    @endif
-                    <br>
                     <form action="update" method="post">
                         {{ csrf_field() }}
                         <input class="u-full-width" type="text" name="name" placeholder="Name" value="{{$user[0] or ''}}"><br>
                         <input class="u-full-width" type="text" name="slacknameondevcenter" placeholder="Slack Username" value="{{$user[1] or ''}}"><br>
                         <input class="u-full-width" type="text" name="skills" placeholder="Skills" value="{{$user[4] or ''}}"><br>
                         <button type="submit">Update Profile</button>
+                        <a href="https://docs.google.com/spreadsheets/d/1FUKXOS0KRGDy5gXyFPrOT6uXUexfeMyLlSk2QYbL2Ks/edit#gid=0" target="_blank">
+                            <button class="google-doc">
+                                <span class="fa fa-file-text-o icon"></span>
+                                <span>See all Users</span>
+                            </button>
+                        </a>
                     </form>
                     @else
                     <p>Welcome to the community.</p>
