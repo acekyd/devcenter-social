@@ -22,7 +22,7 @@ class HomeController extends Controller
         $add = 'A'.($total+2);
         $values = Sheets::range('')->all();
         array_shift($values);
-        $data['entries'] = $values;
+        $data['entries'] = array_reverse($values);
         $exists = 0;
 
         $count = 0;
