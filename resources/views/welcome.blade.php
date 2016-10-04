@@ -44,9 +44,8 @@
                     <p>Welcome to the community.</p>
                     <a href="auth/github"><button class="gh">
                         <span class="fa fa-github icon"></span>
-                        <span>Join and Follow {{$total}} Users</span>
-                    </button>
-                    </a>
+                        <span>Connect with {{$total}} users</span>
+                    </button></a>
                     @endif
                 </div>
             </div>
