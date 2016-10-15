@@ -41,7 +41,13 @@
                         </a>
                     </form>
                     @else
-                    <p>Welcome to the community.</p>
+                    <p>
+                        <strong>Get connected!</strong>
+                    </p>
+                    <p>
+                        Connect with contributors, stay informed and follow the news!<br>
+                        Simply login with github and keep connected:
+                    </p>
                     <a href="auth/github"><button class="gh">
                         <span class="fa fa-github icon"></span>
                         <span>Connect with {{$total}} users</span>
