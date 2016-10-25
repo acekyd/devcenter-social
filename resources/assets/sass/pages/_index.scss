@@ -42,13 +42,17 @@
 
   table{
 
-
   }
 }
+#join-column{
+  position: fixed;
+}
+#user-list{
+  margin-left: 30.6666666667%;
+}
+
 .eight.columns{
   margin-left: 0;
   margin-right: 0;
 }
-
-
 @import "../base/mediaqueries";
