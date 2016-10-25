@@ -1,2 +1,5 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
+@import "tools/skeleton";
+@import "tools/normalize";
+@import "base/placeholders";
+@import "pages/index";
+@import "base/mediaqueries";
