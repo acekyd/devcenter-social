@@ -7,8 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="description" content="Devcenter Square Social is a utility app to automate social connections among members of the Devcenter Square community.">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/app.css" rel="stylesheet">
-        <link href="/css/all.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <link href="css/all.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="assets/img/devcenter.png">
     </head>
     <body>
