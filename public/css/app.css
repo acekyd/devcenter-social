@@ -861,14 +861,9 @@ th {
   margin-left: 0;
   margin-right: 0; }
 
-@media screen and (max-width: 1024px) {
-  .data {
-    display: none; }
-  .four.columns {
-    width: 100%; }
-  .input-data {
-    max-width: 500px;
-    margin: 0 auto; } }
+.table-hidden-message {
+  margin-top: 10px;
+  display: none; }
 
 @media screen and (max-width: 1024px) {
   .data {
@@ -877,6 +872,23 @@ th {
     width: 100%; }
   .input-data {
     max-width: 500px;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .table-hidden-message {
+    display: inline-block; }
+  #join-column {
+    position: relative; } }
+
+@media screen and (max-width: 1024px) {
+  .data {
+    display: none; }
+  .four.columns {
+    width: 100%; }
+  .input-data {
+    max-width: 500px;
+    margin: 0 auto; }
+  .table-hidden-message {
+    display: inline-block; }
+  #join-column {
+    position: relative; } }
 
 /*# sourceMappingURL=app.css.map */

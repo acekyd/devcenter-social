@@ -1,58 +1,67 @@
 
-.input-data{
+.input-data {
   padding: 40px;
   text-align: center;
 
-  .gh{
+  .gh {
     border: 1px solid $gray;
     color: $gray;
     margin-left: 50px;
 
-    &:hover{
+    &:hover {
       color: white;
       background-color: $gray
     }
   }
-  input{
+  input {
     border: 0;
     border-bottom: 1px solid $blue;
 
-    &:focus{
+    &:focus {
       border: 0;
       border-bottom: 1px solid $gray;
     }
   }
-  button{
+  button {
     border-color: $blue;
     color: $blue;
     transition: 0.4s;
 
-    &:hover{
+    &:hover {
       background-color: $blue;
       color: white;
     }
   }
 }
-.data{
+
+.data {
   width: 100%;
   background-color: $blue;
   color: white;
   box-shadow: -10px 0 10px #dedddd;
   padding: 25px;
 
-  table{
+  table {
 
   }
 }
-#join-column{
+
+#join-column {
   position: fixed;
 }
-#user-list{
+
+#user-list {
   margin-left: 30.6666666667%;
 }
 
-.eight.columns{
+.eight.columns {
   margin-left: 0;
   margin-right: 0;
 }
+
+.table-hidden-message {
+  margin-top: 10px;
+  display: none;
+}
+
 @import "../base/mediaqueries";
