@@ -64,4 +64,15 @@
   display: none;
 }
 
+#footer{
+  position: relative;
+  top: 10px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.heart{
+  color: red;
+}
+
 @import "../base/mediaqueries";

@@ -68,6 +68,8 @@
             @endif
         </div>
     </div>
+
+    <div id="footer"> Made with <i class="fa fa-heart heart"></i> from Nigeria</div>
 </section>
 <section id="user-list" class="eight columns">
     <div class="data">

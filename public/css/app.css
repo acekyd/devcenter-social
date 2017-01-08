@@ -865,6 +865,15 @@ th {
   margin-top: 10px;
   display: none; }
 
+#footer {
+  position: relative;
+  top: 150px;
+  max-width: 200px;
+  margin: 0 auto; }
+
+.heart {
+  color: red; }
+
 @media screen and (max-width: 1024px) {
   .data {
     display: none; }
