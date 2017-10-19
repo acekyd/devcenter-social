@@ -159,6 +159,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
@@ -207,6 +209,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Google' => PulkitJalan\Google\Facades\Google::class,
         'Sheets' => GoogleSheets\Facades\Sheets::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
